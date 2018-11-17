@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1"
   },
   "scripts": {
@@ -16,6 +17,16 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoumyoNawab8/tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SoumyoNawab8/tracker/issues"
+  },
+  "homepage": "https://github.com/SoumyoNawab8/tracker#readme",
   "browserslist": [
     ">0.2%",
     "not dead",
