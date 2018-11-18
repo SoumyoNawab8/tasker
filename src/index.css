@@ -13,3 +13,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+label.MuiFormLabel-root-98.MuiInputLabel-root-87.MuiInputLabel-formControl-92.MuiInputLabel-animated-95{
+  color:white;
+}
+.MuiInput-underline-109:before,
+.MuiInput-underline-109:after{
+border-bottom-color: white !important;
+}

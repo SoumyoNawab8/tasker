@@ -13,6 +13,17 @@ class App extends Component {
     }
   }
 
+  submitNotes(event){
+    event.preventDefault();
+  if (event.keyCode === 13) {
+    // Trigger the button element with a click
+    var arr=[];
+    arr.push(this.state.notes);arr.push(event.target.value);
+    this.setState({notes:arr});
+    console.log(this.state.notes)
+  }
+  }
+
   addNotes(){
     var ic=document.getElementById("add");
     if(!this.state.touched){
@@ -41,7 +52,7 @@ class App extends Component {
     return (
       <div className="App">
         <ButtonAppBar onMouse={this.addNotes.bind(this)} />
-        { listEmpty?<p style={{marginTop:'2em',textAlign:'center',color:'white'}}>Your day looks empty.</p>:<PaperSheet list={this.state.notes} />}
+        { listEmpty?<p style={{marginTop:'2em',textAlign:'center',color:'white'}}>Your day looks empty.</p>:<PaperSheet submit={this.submitNotes.bind(this)} list={this.state.notes} />}
       </div>
     );
   }

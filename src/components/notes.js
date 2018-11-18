@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
 import FormControl from '@material-ui/core/FormControl';
 
 const styles = theme => ({
@@ -32,16 +31,22 @@ const styles = theme => ({
 
 
 class PaperSheet extends Component{
+  
     render(){
         const { classes } = this.props;
-       if(this.props.list.length%2===0){
+        const all=this.props.list;
+       if(all.length%2===0){
+         const lista=all.map(data=>{
+           return(<Paper className={classes.root} key={data} elevation={4}>
+            <Typography variant="headline" component="h3" className={classes.p}>
+              {data}
+            </Typography>
+          </Paper>)
+         })
+
         return (
           <div>
-            <Paper className={classes.root} elevation={4}>
-              <Typography variant="headline" component="h3" className={classes.p}>
-                This is a sheet of paper.
-              </Typography>
-            </Paper>
+            {lista}
           </div>
         )
        }
@@ -50,18 +55,12 @@ class PaperSheet extends Component{
           <div>
              <Paper className={classes.root} elevation={4}>
              <div className={classes.margin}>
-        <Grid container spacing={8} alignItems="flex-end">
-          <Grid item>
-          <i className="material-icons" >check_box_outline_blank</i>
-          </Grid>
-          <Grid item>
+      
           <div className={classes.root1}>
           <FormControl fullWidth >
-          <TextField id="input-with-icon-grid" label="With a grid" />
+          <TextField id="input-with-icon-grid" label="Add a task" onKeyUp={this.props.submit} />
           </FormControl>
           </div>
-          </Grid>
-        </Grid>
       </div>
             </Paper>
           </div>
