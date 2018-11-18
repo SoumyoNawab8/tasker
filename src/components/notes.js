@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
 import FormControl from '@material-ui/core/FormControl';
 
 const styles = theme => ({
@@ -50,18 +49,12 @@ class PaperSheet extends Component{
           <div>
              <Paper className={classes.root} elevation={4}>
              <div className={classes.margin}>
-        <Grid container spacing={8} alignItems="flex-end">
-          <Grid item>
-          <i className="material-icons" >check_box_outline_blank</i>
-          </Grid>
-          <Grid item>
+      
           <div className={classes.root1}>
           <FormControl fullWidth >
-          <TextField id="input-with-icon-grid" label="With a grid" />
+          <TextField id="input-with-icon-grid" label="Add a task" />
           </FormControl>
           </div>
-          </Grid>
-        </Grid>
       </div>
             </Paper>
           </div>
