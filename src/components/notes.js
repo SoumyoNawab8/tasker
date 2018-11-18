@@ -31,16 +31,22 @@ const styles = theme => ({
 
 
 class PaperSheet extends Component{
+  
     render(){
         const { classes } = this.props;
-       if(this.props.list.length%2===0){
+        const all=this.props.list;
+       if(all.length%2===0){
+         const lista=all.map(data=>{
+           return(<Paper className={classes.root} key={data} elevation={4}>
+            <Typography variant="headline" component="h3" className={classes.p}>
+              {data}
+            </Typography>
+          </Paper>)
+         })
+
         return (
           <div>
-            <Paper className={classes.root} elevation={4}>
-              <Typography variant="headline" component="h3" className={classes.p}>
-                This is a sheet of paper.
-              </Typography>
-            </Paper>
+            {lista}
           </div>
         )
        }
@@ -52,7 +58,7 @@ class PaperSheet extends Component{
       
           <div className={classes.root1}>
           <FormControl fullWidth >
-          <TextField id="input-with-icon-grid" label="Add a task" />
+          <TextField id="input-with-icon-grid" label="Add a task" onKeyUp={this.props.submit} />
           </FormControl>
           </div>
       </div>
